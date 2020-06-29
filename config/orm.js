@@ -3,24 +3,24 @@ var connection = require("./connection.js");
 
 var orm = {
     selectAll: function(cb) {
-      let queryString = "SELECT * FROM burgers";
+      let queryString = "SELECT * FROM burger";
       connection.query(queryString, function(err, result) {
         if (err) throw err;
-        cb(data)
+        cb(result)
       });
     },
     insertOne: function(col, val, cb) {
-      let queryString = `INSERT INTO burgers (${col}) VALUES(?)`;
+      let queryString = `INSERT INTO burger (${col}) VALUES(?)`;
       connection.query(queryString, val, function(err, result) {
         if (err) throw err;
-        cb(data)
+        cb(result)
       });
     },
-    updateOne: function(col, val, cb) {
-      let queryString = `UPDATE burgers SET devoured=${val} WHERE id = ${id}`;
-      connection.query(queryString, function(err,data) {
+    updateOne: function(val, cb) {
+      let queryString = `UPDATE burger SET devoured = ${val} WHERE id = ${id}`;
+      connection.query(queryString, function(err,result) {
           if (err) throw err;
-          cb(data)
+          cb(result)
         }
       );
     }

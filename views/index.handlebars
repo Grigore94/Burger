@@ -3,7 +3,7 @@
 <h2>Burgers to be devoured</h2>
 
 <ul>
-  {{#each burgers}}
+  {{#each burger}}
     {{#unless devoured}}
     <button class="devoured" data-id="{{id}}" type="button">
       {{ burger-name }} </button>
@@ -13,7 +13,7 @@
 
 <h2>Burgers devoured</h2>
 <ul>
-    {{#each burgers}}
+    {{#each burger}}
     {{#if devoured }} || {{/if}}
     {{/each}}
 </ul>
